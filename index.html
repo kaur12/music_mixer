@@ -2,14 +2,35 @@
 <html>
 <head>
 <meta charset="utf-8">
-	<title>Music Mixer</title>
-	<link href="https://fonts.googleapis.com/css?family=Fahkwang" rel="stylesheet">
+	<title>Drag and Drop Puzzle Game</title>
+	<link href="https://fonts.googleapis.com/css?family=Srisakdi" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<header id="mainHeader">
-		<h1>The Awesome Music Mixer</h1>
+	<header id="headLine">
+		<h1>The Incredible Music Mixer</h1>
+		<p>Play the game by draging and droping the images</p>
 	</header>
+	<section id="game-boards">
+		<div class="puzzle-pieces"></div>
+		<div class="puzzle-board">
+			<div class="drop-zone tl"></div>
+			<div class="drop-zone tr"></div>
+			<div class="drop-zone bl"></div>
+			<div class="drop-zone br"></div>
+		</div>
+	</section>
+	<!-- <section id="wrapper" class="commonSettings"></section> -->
+
+	<footer>
+		<p>click on the image to change picture</p>
+		<nav id="buttonHolder">
+			<img data-puzzleref="0" src="images/buttonZero.jpg" alt="thumbnail">
+			<img data-puzzleref="1" src="images/buttonOne.jpg" alt="thumbnail">
+	    	<img data-puzzleref="2" src="images/buttonTwo.jpg" alt="thumbnail">
+			<img data-puzzleref="3" src="images/buttonThree.jpg" alt="thumbnail">
+		</nav>
+	</footer>
 
 	<script src="js/main.js"></script>
 </body>
