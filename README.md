@@ -12,3 +12,8 @@
 #added some reference material
 #added audio file
 
+# Checkpoint 2
+#Melbin
+#added html, css and partially done js
+#added the images done in class. Need to change that
+#havent added audio files yet
