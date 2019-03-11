@@ -1,16 +1,13 @@
-# The Tag Team Music Mixer
+Great Music Mixer
 
-#Prabhjot Kaur
-#added folders
-#properly linked css & script to html
-#1 html page
+This is the puzzle game.
 
-#Melbin
-#dev.mpj.design
-#Added reference material
-#Added audio
-#added some reference material
-#added audio file
+Firstly choose the Theme.
+ Place the puzzle pieces to the right side board.
+at one time you can play with only one theme.
+refresh the page to reset or choose the theme again.
+
+
 
 # Checkpoint 2
 #Melbin
