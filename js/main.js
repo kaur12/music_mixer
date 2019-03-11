@@ -11,6 +11,12 @@
 
 	let dropZones = document.querySelectorAll('.drop-zone');
 
+	let aud = document.querySelector('audio'),
+		play = document.querySelectorAll('#buttonHolder');
+	
+
+
+
 
 	// functions go in the middle
 	function createPuzzlePieces(pictureIndex) {
@@ -64,16 +70,47 @@
 
 			let item = e.dataTransfer.getData("text/plain");
 			e.target.appendChild(document.querySelector(`#${item}`));
+
 			console.log("you dropped something on me");
 		}
 		else {
 			e.preventDefault();
 		}
 
+
+		})
+
+	// dropZones.forEach(zone =>{
+	// 		zone.addEventListener("sound", function(e) {
+	// 			e.preventDefault();
+	// 			console.log("audio played");
+
+	// 			aud.controls = true;
+	// 			aud.currentTime = 0;
+	// 			aud.play();
+	// 		})
+
+		// const buttonHolder = Array.from(document.querySelectorAll('buttonHolder'));
+
+		// buttonHolder.forEach(aud => aud.addEventListener("transitionend", removePlayingClass));
+
+		// window.addEventListener("clicked", sound);
 		
-		
-		});
-	})
+		// });
+	});
+
+	function playAudio() {
+		aud.play();
+	}
+
+	function swapsource() {
+		aud.load();
+		aud.play();
+	}
+
+
+	puzzleSelectors.forEach(puzzle => puzzle.addEventListener("click", swapsource));
+
 
 	function resetPuzzlePieces() {
 		// empty the thumbnail container
