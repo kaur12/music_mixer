@@ -1,0 +1,14 @@
+Design Notes- 
+
+Whats working:
+1) The images are draggable and can be dropped into the zone.
+2) Audio file is place 
+
+Whats not woeking:
+1) Used the same images we did in class. Whenever we change it, it breaks.
+Solution:
+We guess it mainly have to do with the draggable id. If we get to know how to get the id for the image, we would be able to find a solution
+
+2) The audio file is place but not playing
+Solution:
+Not idea why.
