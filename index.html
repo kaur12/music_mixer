@@ -1,39 +1,59 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-	<title>Drag and Drop Puzzle Game</title>
-	<link href="https://fonts.googleapis.com/css?family=Srisakdi" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8">
+<title>Great Music Mixer</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link href="https://fonts.googleapis.com/css?family=Mr+Dafoe" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web:900" rel="stylesheet">
 </head>
 <body>
-	<header id="headLine">
-		<h1>The Incredible Music Mixer</h1>
-		<p>Play the game by draging and droping the images</p>
-	</header>
-	<section id="game-boards">
-		<div class="puzzle-pieces"></div>
-		<div class="puzzle-board">
-			<div class="drop-zone tl"></div>
-			<div class="drop-zone tr"></div>
-			<div class="drop-zone bl"></div>
-			<div class="drop-zone br"></div>
-		</div>
-	</section>
-	<!-- <section id="wrapper" class="commonSettings"></section> -->
+	<div id="siteContainer">
+		<header id="mainHeader">
+			<div id="logo">
+				<h1>MUSIC MIXER</h1>
+			</div> 
+			
+		</header>
 
-	<footer>
-		<p>click on the image to change picture</p>
-		<nav id="buttonHolder">
-			<img data-puzzleref="0" src="images/buttonZero.jpg" alt="thumbnail">
-			<img data-puzzleref="1" src="images/buttonOne.jpg" alt="thumbnail">
-	    	<img data-puzzleref="2" src="images/buttonTwo.jpg" alt="thumbnail">
-			<img data-puzzleref="3" src="images/buttonThree.jpg" alt="thumbnail">
-		</nav>
-	</footer>
+		<section id="iconStore">
+			<h2 class="hidden">Icon Store</h2>
+			<div id="icons"><!-- Icon-children go in here -->
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div id="iconDisplay"><!-- when icons are selected it should display interactivity here <-->
+				<div class="drop-zone"></div>
+				<div class="drop-zone"></div>
+				<div class="drop-zone"></div>
+				<div class="drop-zone"></div>
+				<div class="drop-zone"></div>
+				<div class="drop-zone"></div>
+			</div>
+		</section>
 
-	 <audio id="sound" src="audio/kick.wav" preload="auto"></audio>
+		<section id="iconSelector">
+			<h2 class="hidden">Icon Selection</h2>
+			<div id="iconSelect">
+			</div>
 
-	<script src="js/main.js"></script>
+		</section>
+
+
+		<footer id="mainFooter">
+			
+
+			<div id="copyright">
+				<p>&copy; 2019 MUSIC MIXER</p>
+			</div>
+		</footer>
+
+
+
+	</div>
+
+<script src="js/main.js"></script>
 </body>
 </html>

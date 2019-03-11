@@ -1,113 +1,157 @@
-@charset "utf-8";
-/* CSS Document */
-body {
-	margin: 0px;
-	border: 0px;
-	background-image:url(../images/white_bkg.jpg);
-	background-repeat:repeat;
-	background-color: #333;
-	color: #808080;
-	font-family: 'Srisakdi', cursive;
-	font-size:10px;
+@charset "UTF-8";
+
+.hidden{
+	display: none;
 }
 
-#game-boards {
-	width: 100%;
-	text-align: center;
+body
+{
+	font-family: "Average Sans", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #333;
+	background-image: url("../images/bg.jpg");
+	border-top: 10px solid #333;
 }
 
-.puzzle-pieces, .puzzle-board {
+p
+{
+	line-height: 20px;
+}
+
+a
+{
+	text-decoration: none;
+}
+
+/*Main Page Elements*/
+
+#siteContainer
+{
+	margin: 0 auto;
+	width: 960px;
+}
+
+#mainHeader
+{
 	margin-top: 40px;
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 30px;
+	/*background-color: #000;*/
+	border-radius: 20px;
+}
+
+#logo
+{
+	width: 260px;
+	margin-top: 5px;
+	padding-left: 10px;
+}
+
+#logo h1 {
+  position: relative;
+  background-image: -webkit-linear-gradient(#378DBC 0%, #B6E8F1 46%, #ffffff 50%, #32120E 54%, #FFC488 58%, #582C11 90%, #EC9B4E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 4px #f5f5f5;
+  font-size: 40px;
+  font-family: 'Titillium Web', sans-serif;
+  font-style: italic;
+  margin-left: 400px;
+  /*line-height: 1;*/
+  text-align: center;
+}
+
+
+
+#iconStore
+{
+	display: flex;
+	flex-direction: row;
+	margin-top: 20px;
+}
+
+#icons
+{
+	width: 400px;
+	height: 350px;
+	background-color: #333;
+	margin-right: 60px;
+}
+
+#iconDisplay
+{
+	width: 700px;
 	height: 400px;
-	display: inline-block;
-	border: medium solid #333;
+	/*background-color: #75687a;*/
+	margin-top: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+#iconSelector
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-top: 20px;
+}
+
+
+#iconSelect
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	width: 700px;
+	height: 200px;
 	background-color: #000;
-	color: inherit;
-	overflow: hidden;
+	margin: auto;
+	margin-top: 80px;
+	margin-bottom: 30px;
 }
 
-.puzzle-pieces {
-	width: 300px;
-	margin-right: 20px;
-
+.icon
+{
+	width: 150px;
 }
 
-.puzzle-board { width:600px; }
-
-.puzzle-image {
-	width: 40%;
-	display: block;
-	padding: 8px;
-	cursor: pointer;
+#mainFooter
+{
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 30px;
 }
 
-.puzzle-image:nth-child(even) {
-	float: right;
-	clear: both;
+
+#copyright
+{
+	margin-left: auto;
+	margin-top: 50px;
+	font-size: 15px;
+	color: #fff;
 }
-.puzzle-image:nth-child(odd) {
-	float: left;
-	clear: both;
+
+.instrumentVariant {
+	width: 50px;
 }
+
 
 .drop-zone {
-  width: 49.5%;
-  height: 49.5%;
-  border: thin dashed white;
-  float: left;
-  position: relative;
+	width: 150px;
+	height: 150px;
+	margin: 20px;
+	border-radius: 5px;
+	background-color: #333;
 }
 
-.tl, .bl { text-align: right; }
-.tr img { bottom: 0; }
-.tl img { bottom: 0; right: 0; }
-.bl img { right: 0; }
-
 .drop-zone img {
-	width: auto !important;
-	padding: 0 !important;
+	/*width: auto !important;*/
+	/*padding: 0 !important;*/
 	cursor: default;
 	position: absolute;
 }
 
 
-header {
-	position: relative;
-	top: 20px;
-	width:600px;
-	margin: 0px auto;
-	text-align: center;
-}
-
-header h1 {
-	font-size: 3.25em;
-  letter-spacing: 3px;
-	margin: 10px 0
-}
-
-header p, footer p { font-size: 1.7em; letter-spacing: 2px; margin: 10px 0 }
-
-footer {
-	position: relative;
-	top: 65px;
-	width:600px;
-	margin: 0px auto;
-	text-align: center;
-}
-
-#buttonHolder {
-	margin: 0px auto;
-	text-align:center;
-}
-
-#buttonHolder img {
-	margin-left: 5px;
-	margin-right: 5px;
-	border-radius: 20px;
-	border: thin solid #333;
-	cursor: pointer;
-}
-
-#buttonHolder img:hover {
-	opacity:.5;
-}
