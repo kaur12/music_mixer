@@ -1,131 +1,77 @@
 (() => {
-	// variables always come first 
-	// set up the puzzle pieces and boards
-	
 
-	const pieces = ["topLeft", "topRight", "bottomLeft", "bottomRight"];
+	// Variables are defined here
 
-	let piecesBoard = document.querySelector(".puzzle-pieces"),
-		puzzleBoard = document.querySelector(".puzzle-board"),
-		puzzleSelectors = document.querySelectorAll("#buttonHolder img");
+	const instruments = ["guitar", "harp", "piano_keys", "tambourine"];
 
-	let dropZones = document.querySelectorAll('.drop-zone');
+	var instrumentSelector = document.querySelectorAll("#iconSelect img");
+	var iconDisplay = document.querySelector("#icons");
 
-	let aud = document.querySelector('audio'),
-		play = document.querySelectorAll('#buttonHolder');
-	
+	let dropZones = document.querySelectorAll(".drop-zone");
 
+  
+	// Functions go here
 
+	// function displayVariants (iconIndex) {
+	// 	// Display variants of each instrument on the left side
+	// 	instruments.forEach((instrument, index) => {
+	// 		let instrumentIcon = `<img draggable id="${instruments[iconIndex] + index}" class="instrumentVariant" src="images/${instruments[iconIndex] + index}.svg" alt="Instrument Variants">`;
 
+	// 		iconDisplay.innerHTML += instrumentIcon; 
+	// 	});
 
-	// functions go in the middle
-	function createPuzzlePieces(pictureIndex) {
-		// generate puzzle pieces for left and right side
-		// debugger;
-		pieces.forEach((piece, index) => {
-			let newPuzzlePiece = `<img draggable id="piece${index}" class="puzzle-image" src="images/${piece + pictureIndex}.jpg" alt="thumbnail">`;
+	// 	initDrag();
+	// }
 
-			piecesBoard.innerHTML += newPuzzlePiece;
-
-		});
-
-		puzzleBoard.style.backgroundImage = `url(./images/background${pictureIndex}.jpg)`;
-
-		initDrag();
-	} 
-
-
-	// drag and drop functionality goes here
-	
+	// Drag and Drop code
 
 	function initDrag() {
-		piecesBoard.querySelectorAll('img').forEach(img => {
+		iconDisplay.querySelectorAll('img').forEach(img => {
 			img.addEventListener("dragstart", function(e) {
-				console.log('draggin...');
-
 
 				e.dataTransfer.setData("text/plain", this.id);
 			});
 		});
 	}
 
+	// Drag-Over and Drop functions
 
-
-	// handle dragover and drop
-	
-	dropZones.forEach(zone =>{
+	dropZones.forEach(zone => {
 		zone.addEventListener("dragover", function(e) {
 			e.preventDefault();
-			console.log("you dragged over me");
 		});
-	})
 
-
-	dropZones.forEach(zone =>{
 		zone.addEventListener("drop", function(e) {
-			e.preventDefault();
-
-			let boxContent = zone.innerHTML;
-			if(!boxContent) {
-
-			let item = e.dataTransfer.getData("text/plain");
-			e.target.appendChild(document.querySelector(`#${item}`));
-
-			console.log("you dropped something on me");
+			// Prevents adding multiple instruments to same dropzone
+			if (!zone.innerHTML) {
+			let instrument = e.dataTransfer.getData("text/plain");
+			e.target.appendChild(document.querySelector(`#${instrument}`));
+			playAudio(`${piece}Audio`);
 		}
 		else {
 			e.preventDefault();
 		}
-
-
-		})
-
-	// dropZones.forEach(zone =>{
-	// 		zone.addEventListener("sound", function(e) {
-	// 			e.preventDefault();
-	// 			console.log("audio played");
-
-	// 			aud.controls = true;
-	// 			aud.currentTime = 0;
-	// 			aud.play();
-	// 		})
-
-		// const buttonHolder = Array.from(document.querySelectorAll('buttonHolder'));
-
-		// buttonHolder.forEach(aud => aud.addEventListener("transitionend", removePlayingClass));
-
-		// window.addEventListener("clicked", sound);
-		
-		// });
+		});
 	});
 
-	function playAudio() {
-		aud.play();
-	}
-
-	function swapsource() {
-		aud.load();
-		aud.play();
+	function playAudio(audioId){
+		const x = document.getElementById(audioId);
+		console.log(x);
+		x.play();
 	}
 
 
-	puzzleSelectors.forEach(puzzle => puzzle.addEventListener("click", swapsource));
-
-
-	function resetPuzzlePieces() {
-		// empty the thumbnail container
-		piecesBoard.innerHTML = "";
-		dropZones.forEach(zone => zone.innerHTML = "");
-		createPuzzlePieces(this.dataset.puzzleref);
+	function resetVariants() {
+		// removes the instrument variants to display new ones
+		iconDisplay.innerHTML = "";
+		displayVariants(this.dataset.instrumentref);
 	}
 
-	// event handling down here
-	puzzleSelectors.forEach(puzzle => puzzle.addEventListener("click", resetPuzzlePieces));
+	// Event Handling below this
 
-	createPuzzlePieces(0);
-	
-	
-	
-	
+	instrumentSelector.forEach(instrument => instrument.addEventListener("click", resetVariants));
+
+	// displayVariants(0);
+
 })();
 
