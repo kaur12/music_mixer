@@ -2,7 +2,7 @@
 
 	// Variables are defined here
 
-	const instruments = ["guitar", "harp", "piano_keys", "tambourine"];
+	const instruments = ["guitar", "flute", "piano", "tambourine"];
 
 	var instrumentSelector = document.querySelectorAll("#iconSelect img");
 	var iconDisplay = document.querySelector("#icons");
@@ -12,16 +12,16 @@
   
 	// Functions go here
 
-	// function displayVariants (iconIndex) {
-	// 	// Display variants of each instrument on the left side
-	// 	instruments.forEach((instrument, index) => {
-	// 		let instrumentIcon = `<img draggable id="${instruments[iconIndex] + index}" class="instrumentVariant" src="images/${instruments[iconIndex] + index}.svg" alt="Instrument Variants">`;
+	function displayVariants (iconIndex) {
+		// Display variants of each instrument on the left side
+		instruments.forEach((instrument, index) => {
+			let instrumentIcon = `<img draggable id="${instruments[iconIndex] + index}" class="instrumentVariant" src="images/${instruments[iconIndex] + index}.svg" alt="Instrument Variants">`;
 
-	// 		iconDisplay.innerHTML += instrumentIcon; 
-	// 	});
+			iconDisplay.innerHTML += instrumentIcon; 
+		});
 
-	// 	initDrag();
-	// }
+		initDrag();
+	}
 
 	// Drag and Drop code
 
@@ -54,8 +54,8 @@
 		});
 	});
 
-	function playAudio(audioId){
-		const x = document.getElementById(audioId);
+	function playAudio(audiofiles){
+		const x = document.getElementById(audiofiles);
 		console.log(x);
 		x.play();
 	}
@@ -71,7 +71,7 @@
 
 	instrumentSelector.forEach(instrument => instrument.addEventListener("click", resetVariants));
 
-	// displayVariants(0);
+	displayVariants(0);
 
 })();
 
