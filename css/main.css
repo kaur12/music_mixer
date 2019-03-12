@@ -154,4 +154,39 @@ a
 	position: absolute;
 }
 
+#guitar0, #guitar1, #guitar2, #guitar3 {
+	width: 130px;
+	height: 70px;
+	margin: 10px auto;
+	display: flex;
+	flex-direction: column;
+}
+
+#flute0, #flute1, #flute2, #flute3 {
+	width: 130px;
+	height: 70px;
+	margin: 10px auto;
+	display: flex;
+	flex-direction: column;
+}
+
+#tambourine0, #tambourine1, #tambourine2, #tambourine3 {
+	width: 130px;
+	height: 70px;
+	margin: 10px auto;
+	display: flex;
+	flex-direction: column;
+}
+
+#piano0, #piano1, #piano2, #piano3 {
+	width: 130px;
+	height: 70px;
+	margin: 10px auto;
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+
 
