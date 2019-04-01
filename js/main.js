@@ -12,6 +12,8 @@
   
 	// Functions go here
 
+
+
 	function displayVariants (iconIndex) {
 		// Display variants of each instrument on the left side
 		instruments.forEach((instrument, index) => {
