@@ -11,6 +11,6 @@ refresh the page to reset or choose the theme again.
 
 # Checkpoint 2
 #Melbin
-#added html, css and partially done js
-#added the images done in class. Need to change that
-#havent added audio files yet
+#added html, css
+#added the images and audio.
+#added audio files for the developer to work with.
