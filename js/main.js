@@ -48,18 +48,18 @@
 			if (!zone.innerHTML) {
 			let instrument = e.dataTransfer.getData("text/plain");
 			e.target.appendChild(document.querySelector(`#${instrument}`));
-			playAudio(`${piece}Audio`);
+			playAudio(instrument);
 		}
 		else {
-			e.preventDefault();
+			return;
 		}
 		});
 	});
 
 	function playAudio(audiofiles){
-		const x = document.getElementById(audiofiles);
-		console.log(x);
-		x.play();
+		const audioTrack = document.querySelector(`[data-ref="${audiofiles}"]`);
+		console.log(audioTrack);
+		audioTrack.play();
 	}
 
 
