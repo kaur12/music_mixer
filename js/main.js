@@ -56,6 +56,19 @@
 		});
 	});
 
+	// function resetVariants() {
+	// 	// changing the puzzle and regenrate the puzzle
+	// 	dropZones.innerHTML = "";
+	// 	createPuzzlePieces(this.dataset.puzzleref);
+	// 	// debugger;
+	// 	var images = document.getElementsByClassName("icon");
+ //    			while(images.length > 4){
+ //        		images[4].parentNode.removeChild(images[4]);
+ //        }
+	// }
+
+	// instrumentSelector.forEach(instrument => instrument.addEventListener("click", resetPuzzlePieces));
+
 	function playAudio(audiofiles){
 		const audioTrack = document.querySelector(`[data-ref="${audiofiles}"]`);
 		console.log(audioTrack);
@@ -67,6 +80,10 @@
 		// removes the instrument variants to display new ones
 		iconDisplay.innerHTML = "";
 		displayVariants(this.dataset.instrumentref);
+		var images = document.getElementsByClassName("instrumentVariant");
+    			while(images.length > 4){
+        		images[4].parentNode.removeChild(images[4]);
+        	}
 	}
 
 	// Event Handling below this
